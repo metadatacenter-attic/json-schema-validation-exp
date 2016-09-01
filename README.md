@@ -1,3 +1,9 @@
+A Java-based validator for validating a JSON document against a JSON Schema document.
+
+It can be used as follows:
+
+    java -jar ./target/json-schema-validation-exp-0.1.0-jar-with-dependencies.jar <json_schema_file> <json_instance_file>
+
 The <tt>src/main/resources</tt> directort contains a set of self-contained schemas for 
 particular fields in the CEDAR Template Validation Schema
 
