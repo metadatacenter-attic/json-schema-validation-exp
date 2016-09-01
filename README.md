@@ -1,29 +1,15 @@
-JSON Schema Validator
-=====================
+The <tt>src/main/resources</tt> directort contains a set of self-contained schemas for 
+particular fields in the CEDAR Template Validation Schema
 
-Experimental Java project that uses [json-schema-validator](https://github.com/daveclayton/json-schema-validator) to validate a JSON document against a schema.
+These schemas are generated using the <tt>schemawrap.sh</tt> script in the <tt>scripts</tt> directory in the <tt>cedar-model</tt> repo.
 
-#### Building and Running
+Templates, elements, elements and fields can be incrementally validated agains these schema.
 
-To build this library you must have the following items installed:
+For example, using the Python <tt>jsvalid.py</tt> validation script from the <tt>scripts</tt> directory in the <tt>cedar-model</tt> repo: 
 
-+ [Java 8](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
-+ A tool for checking out a [Git](http://git-scm.com/) repository.
-+ Apache's [Maven](http://maven.apache.org/index.html).
+    jsvalid.py -s provenanceFields.json -i templateFieldExample.json 
 
-Get a copy of the latest code:
-
-    git clone https://github.com/metadatacenter/json-schema-validation-exp.git
-
-Change into the json-schema-validation-exp directory:
-
-    cd json-schema-validation-exp
-
-Then build it with Maven:
-
-    mvn clean install
-
-To run:
-
-    java -jar ./target/json-schema-validation-exp-${version}-jar-with-dependencies.jar <schemaFileName> <instanceFileName>
+Or the Java-based validator from the <tt>cedar-model-validator</tt> repo:
+    
+    java -jar json-schema-validation-exp/target/json-schema-validation-exp-0.1.0-jar-with-dependencies.jar provenanceFields.json templateFieldExample
 
